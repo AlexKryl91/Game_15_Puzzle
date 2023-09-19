@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Fifteen Puzzle</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="180x180"
+      href="favicon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="favicon-512x512.png"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>FIFTEEN</h1>
+      <h2>Puzzle Game</h2>
+    </header>
+    <main>
+      <div class="gameContainer">
+        <div class="gameField"></div>
+        <div class="btnWrapper">
+          <button id="restartBtn" title="Click to Restart!">NEW GAME</button>
+          <label for="movesCounter" id="counterLabel"
+            >MOVES:
+            <span id="movesCounter" title="Counts your moves">0</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="cover" title="Congratulations!"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

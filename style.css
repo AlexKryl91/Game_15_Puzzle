@@ -1,0 +1,205 @@
+@import url(./style_default.css);
+@font-face {
+  font-family: 'HelveticaInseratCyrillicUpright';
+  src: url('./fonts/helvetica_inserat_cyrillic_upright.ttf') format('truetype');
+}
+
+:root {
+  /* --primary-color-1: rgb(255, 255, 150);
+  --primay-color-2: rgb(255, 255, 100);
+  --primary-color-3: rgb(255, 230, 0);
+  --primary-color-4: rgb(255, 150, 50);
+  --primary-color-5: rgb(255, 120, 50);
+  --primay-color-6: rgb(255, 100, 50);
+  --primary-color-7: rgb(150, 75, 50); */
+  --shadow-color: rgb(0 0 0 /0.4);
+  --white-color: rgb(240, 240, 240);
+}
+
+body {
+  background: linear-gradient(0deg, #0f1614 0%, #1a2723 50%, #0f1614 100%);
+  /* selectable properies */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+header {
+  width: 100%;
+  min-width: 300px;
+  height: clamp(80px, 26vw, 140px);
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'HelveticaInseratCyrillicUpright', Arial, sans-serif;
+  font-size: clamp(2.5em, 14vw, 4.5em);
+  padding-top: 0.25em;
+  color: var(--white-color);
+}
+
+header h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.1em, 6vw, 2em);
+  color: rgb(105, 145, 255);
+}
+
+main {
+  position: relative;
+}
+
+.gameContainer {
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid transparent;
+  border-radius: 4%;
+  background: linear-gradient(
+      225deg,
+      rgb(255, 255, 100) 0%,
+      rgb(255, 100, 50) 100%
+    )
+    border-box;
+  box-shadow: -8px 8px 6px var(--shadow-color);
+}
+
+.gameContainer::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.gameField {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 80px;
+  width: 100%;
+  border: 6px solid rgb(255, 150, 50);
+  border-radius: 4%;
+  background: rgb(150, 75, 50);
+  box-shadow: inset 0px 0px 3px 10px var(--shadow-color);
+}
+
+.gameBlock {
+  position: absolute;
+  display: flex;
+  width: 25%;
+  height: 25%;
+  color: var(--white-color);
+  font-size: clamp(2.5em, 14vw, 4.5em);
+  font-family: 'HelveticaInseratCyrillicUpright', Arial, sans-serif;
+  text-shadow: -3px 2px 1px rgb(255, 120, 50);
+  background-image: url('./pic/gameBlock_background.svg');
+  border-radius: 10%;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.emptyBlock {
+  display: none;
+}
+
+.active {
+  cursor: pointer;
+}
+
+.active:hover {
+  outline: 2px solid rgb(255, 230, 0);
+  box-shadow: 0 0 12px rgb(255, 255, 150);
+  z-index: 10;
+}
+
+.btnWrapper {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white-color);
+}
+
+#restartBtn {
+  font: inherit;
+  color: var(--white-color);
+  width: 40%;
+  height: 50px;
+  border: none;
+  background: rgb(70, 120, 215);
+  border-radius: 6px;
+}
+
+#startBtn:hover {
+  background-color: rgb(30, 75, 170);
+  transition: all 0.2s;
+  box-shadow: 0 0 6px 1px rgb(255, 255, 150);
+}
+
+#counterLabel {
+  display: inherit;
+  align-items: center;
+}
+
+#movesCounter {
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--white-color);
+  text-align: right;
+  margin-left: 6px;
+  padding: 12px 20px;
+  border: none;
+  background: rgb(105, 145, 255);
+  box-shadow: inset -2px 2px 4px var(--shadow-color);
+  border-radius: 6px;
+}
+
+/* FOR GAME COVER */
+
+#cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: +1;
+  width: calc(100% - 10px);
+  min-width: 290px;
+  max-width: 490px;
+
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(6px);
+
+  border-radius: 4%;
+  background: rgb(50, 25, 20, 0.5);
+
+  color: var(--white-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(40px, 13vw, 60px);
+  font-weight: 600;
+  text-align: center;
+
+  transition: all 0.4s ease-in;
+}
+
+#cover::before {
+  position: relative;
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
