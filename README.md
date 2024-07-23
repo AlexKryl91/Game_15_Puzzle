@@ -20,7 +20,7 @@ _**Особенности:**_
 
 Дизайн:
 
-> - **Adobe Illustartor**
+> - **Adobe Illustrator**
 
 Фронтенд:
 
