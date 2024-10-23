@@ -1,22 +1,23 @@
-@import url(./style_default.css);
 @font-face {
-  font-family: 'HelveticaInseratCyrillicUpright';
-  src: url('./fonts/helvetica_inserat_cyrillic_upright.ttf') format('truetype');
+  font-family: 'HelveticaInserat';
+  src: url('/fonts/HelveticaInserat.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
-  /* --primary-color-1: rgb(255, 255, 150);
-  --primay-color-2: rgb(255, 255, 100);
-  --primary-color-3: rgb(255, 230, 0);
-  --primary-color-4: rgb(255, 150, 50);
-  --primary-color-5: rgb(255, 120, 50);
-  --primay-color-6: rgb(255, 100, 50);
-  --primary-color-7: rgb(150, 75, 50); */
   --shadow-color: rgb(0 0 0 /0.4);
   --white-color: rgb(240, 240, 240);
+
+  --font-family-base: Arial, Helvetica, sans-serif;
+  --font-family-accent: 'HelveticaInserat', var(--font-family-base);
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: linear-gradient(0deg, #0f1614 0%, #1a2723 50%, #0f1614 100%);
   /* selectable properies */
   user-select: none;
@@ -28,20 +29,21 @@ body {
 
 header {
   width: 100%;
-  min-width: 300px;
   height: clamp(80px, 26vw, 140px);
+  margin-top: calc(clamp(80px, 26vw, 140px) * -1);
+  min-width: 300px;
   text-align: center;
 }
 
 header h1 {
-  font-family: 'HelveticaInseratCyrillicUpright', Arial, sans-serif;
+  font-family: var(--font-family-accent);
   font-size: clamp(2.5em, 14vw, 4.5em);
   padding-top: 0.25em;
   color: var(--white-color);
 }
 
 header h2 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-base);
   font-size: clamp(1.1em, 6vw, 2em);
   color: rgb(105, 145, 255);
 }
@@ -96,9 +98,9 @@ main {
   height: 25%;
   color: var(--white-color);
   font-size: clamp(2.5em, 14vw, 4.5em);
-  font-family: 'HelveticaInseratCyrillicUpright', Arial, sans-serif;
+  font-family: var(--font-family-accent);
   text-shadow: -3px 2px 1px rgb(255, 120, 50);
-  background-image: url('./pic/gameBlock_background.svg');
+  background-image: url('/img/block_bg.svg');
   border-radius: 10%;
   align-items: center;
   justify-content: center;
@@ -113,12 +115,6 @@ main {
   cursor: pointer;
 }
 
-.active:hover {
-  outline: 2px solid rgb(255, 230, 0);
-  box-shadow: 0 0 12px rgb(255, 255, 150);
-  z-index: 10;
-}
-
 .btnWrapper {
   width: 100%;
   height: 80px;
@@ -127,7 +123,7 @@ main {
   align-items: center;
   font-size: 18px;
   font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-base);
   color: var(--white-color);
 }
 
@@ -139,12 +135,6 @@ main {
   border: none;
   background: rgb(70, 120, 215);
   border-radius: 6px;
-}
-
-#startBtn:hover {
-  background-color: rgb(30, 75, 170);
-  transition: all 0.2s;
-  box-shadow: 0 0 6px 1px rgb(255, 255, 150);
 }
 
 #counterLabel {
@@ -189,7 +179,7 @@ main {
   background: rgb(50, 25, 20, 0.5);
 
   color: var(--white-color);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-base);
   font-size: clamp(40px, 13vw, 60px);
   font-weight: 600;
   text-align: center;
@@ -202,4 +192,18 @@ main {
   content: '';
   display: block;
   padding-top: 100%;
+}
+
+@media (hover: hover) {
+  .active:hover {
+    outline: 2px solid rgb(255, 230, 0);
+    box-shadow: 0 0 12px rgb(255, 255, 150);
+    z-index: 10;
+  }
+
+  #restartBtn:hover {
+    background-color: rgb(30, 75, 170);
+    transition: all 0.2s;
+    box-shadow: 0 0 6px 1px rgb(255, 255, 150);
+  }
 }
