@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'HelveticaInserat';
-  src: url('/fonts/HelveticaInserat.woff2') format('woff2');
+  src: url('./fonts/HelveticaInserat.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -100,7 +100,7 @@ main {
   font-size: clamp(2.5em, 14vw, 4.5em);
   font-family: var(--font-family-accent);
   text-shadow: -3px 2px 1px rgb(255, 120, 50);
-  background-image: url('/img/block_bg.svg');
+  background-image: url('./img/block_bg.svg');
   border-radius: 10%;
   align-items: center;
   justify-content: center;
